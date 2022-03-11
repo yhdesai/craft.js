@@ -11,6 +11,7 @@ import { Button } from '../../selectors/Button';
 import { Container } from '../../selectors/Container';
 import { Text } from '../../selectors/Text';
 import { Video } from '../../selectors/Video';
+import {StyledInput} from '../../selectors/StyledInput';
 
 const ToolboxDiv = styled.div<{ enabled: boolean }>`
   transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -81,6 +82,14 @@ export const Toolbox = () => {
           <Tooltip title="Button" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
               <ButtonSvg />
+            </Item>
+          </Tooltip>
+        </div>
+
+        <div ref={(ref) => create(ref, <StyledInput />)}>
+          <Tooltip title="Input" placement="right">
+            <Item className="m-2 pb-2 cursor-pointer block" move>
+              <div>INPUT SVG</div>
             </Item>
           </Tooltip>
         </div>
