@@ -52,6 +52,12 @@ function App() {
           }}
           enabled={false}
           onRender={RenderNode}
+          onNodesChange={(query) => {
+            console.log('change was detected in the editor')
+
+            const rawJson = query.serialize()
+            console.log({rawJson})
+          }}
         >
           <Viewport>
             <Frame>
